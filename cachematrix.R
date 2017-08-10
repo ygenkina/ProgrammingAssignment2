@@ -26,7 +26,7 @@ cacheSolve <- function(x, ...) {
           return(i) #if true, print a statement and then the matrix inverse
         }
         my_matr<-x$get()#call the get fnxn from the makeChacheMatrix constructor
-        i<-solve(my_matr,...)
-        x$setinv(i)
-        i
+        i<-solve(my_matr,...) # calculate the inverse and store that in i
+        x$setinv(i) #make sure that this value is stored in cache
+        i #return the matrix inverse value
 }
